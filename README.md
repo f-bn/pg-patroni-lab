@@ -21,7 +21,7 @@ Configurations to deploy HA PostgreSQL cluster using Patroni for training purpos
   - 3x **PostgreSQL** instances in replication
 
 * **DCS cluster**
-  - 3x **Zookeeper** nodes
+  - 3x **Zookeeper** nodes in cluster
 
 ## References
 
