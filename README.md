@@ -1,8 +1,10 @@
 <p><img src="https://icon-library.com/images/postgresql-icon/postgresql-icon-20.jpg" alt="pg-logo" title="pg" align="top" height=220 /></p>
 
-Configurations to deploy HA PostgreSQL cluster using Zalando Patroni for training purpose.
+*Patroni is a template for you to create your own customized, high-availability solution using Python and - for maximum accessibility - a distributed configuration store like ZooKeeper, etcd, Consul or Kubernetes. Database engineers, DBAs, DevOps engineers, and SREs who are looking to quickly deploy HA PostgreSQL in the datacenter-or anywhere else-will hopefully find it useful*
 
-## Cluster design
+## General informations
+
+This repository contains configurations for deploying a PostgreSQL HA cluster using Zalando Patroni (for training purpose).
 
 ### Overview
 
@@ -12,13 +14,16 @@ Configurations to deploy HA PostgreSQL cluster using Zalando Patroni for trainin
 
   - **PostgreSQL version** : `14.1`
   - **Patroni version** : `2.1.2`
-  - **DCS** : etcd `3.5.0`
+  - **DCS (Distributed Configuration Store)** : etcd `3.5.0`
   - **OS** : Fedora 35
 
 ### Nodes description
 
+The cluster is composed of two main "sub" clusters :
+
 * **PostgreSQL cluster**
-  - 3x **PostgreSQL 14.1** instances in replication
+  - 1x **Primary** PostgreSQL instance
+  - 2x **Standby** PostgreSQL instances in streaming replication
 
 * **DCS cluster**
   - 3x **etcd** nodes in HA cluster
