@@ -23,7 +23,7 @@ The cluster is composed of two main "sub" clusters :
 
 * **PostgreSQL cluster**
   - 1x **Primary** PostgreSQL instance
-  - 2x **Standby** PostgreSQL instances in streaming replication
+  - 2x **Standby** PostgreSQL instances in streaming replication (managed by Patroni)
 
 * **DCS cluster**
   - 3x **etcd** nodes in HA cluster
