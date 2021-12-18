@@ -8,7 +8,7 @@ This repository contains configurations for deploying a PostgreSQL HA cluster us
 
 ### Overview
 
-*TBD*
+![Patroni cluster](docs/patroni-18122021-1.png)
 
 ### Components
 
@@ -21,6 +21,9 @@ This repository contains configurations for deploying a PostgreSQL HA cluster us
 
 The cluster is composed of two main "sub" clusters :
 
+* **Front Load Balancers**
+  - 2x **HAProxy LB** in dual Active/Passive mode + Keepalived (1 failover IP for R/W traffic, 1 failover IP for R/O traffic)
+
 * **PostgreSQL cluster**
   - 1x **Primary** PostgreSQL instance
   - 2x **Standby** PostgreSQL instances in streaming replication (managed by Patroni)
@@ -32,5 +35,7 @@ The cluster is composed of two main "sub" clusters :
 
 - **PostgreSQL** : https://www.postgresql.org/
 - **Patroni (Zalando)** : https://github.com/zalando/patroni
+- **pgBouncer** : https://www.pgbouncer.org/
 - **etcd** : https://etcd.io/
-- **Zookeeper** : https://zookeeper.apache.org/
+- **Apache Zookeeper** : https://zookeeper.apache.org/
+- **HAProxy** : https://www.haproxy.com/
