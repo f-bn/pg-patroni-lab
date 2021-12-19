@@ -2,7 +2,7 @@
 
 #### Installation
 
-* Add official PostgreSQL 14 RPM repository for Fedora (Patroni is included) :
+* Add official PostgreSQL RPM repositories for Fedora (Patroni RPMs are included in these repositories) :
 
   ```shell
   $ dnf in -y https://download.postgresql.org/pub/repos/yum/reporpms/F-35-x86_64/pgdg-fedora-repo-latest.noarch.rpm
@@ -22,7 +22,6 @@
   $ mkdir -p /etc/patroni
 
   $ vi /etc/patroni/patroni.yml
-
     ---
     scope: patroni-lab
     name: patroni01
