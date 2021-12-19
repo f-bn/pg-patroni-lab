@@ -37,7 +37,8 @@
   $ ps fauwx
 
   postgres   17943  0.0  1.4 555808 29900 ?        Ssl  16:47   0:00 /usr/bin/python3 /usr/bin/patroni /etc/patroni/patroni.yml
-  postgres   17966  0.0  1.0 206664 21532 ?        S    16:47   0:00 /usr/pgsql-14/bin/postgres -D /var/lib/pgsql/14/data --config-file=/var/lib/pgsql/14/data/postgresql.conf --listen_addresses=* --port=5432 --clpostgres   17967  0.0  0.2  61368  4356 ?        Ss   16:47   0:00  \_ postgres: patroni-lab: logger
+  postgres   17966  0.0  1.0 206664 21532 ?        S    16:47   0:00 /usr/pgsql-14/bin/postgres -D /var/lib/pgsql/14/data --config-file=/postgresql.conf...
+  postgres   17967  0.0  0.2  61368  4356 ?        Ss   16:47   0:00  \_ postgres: patroni-lab: logger
   postgres   17972  0.0  0.3 206868  7024 ?        Ss   16:47   0:00  \_ postgres: patroni-lab: checkpointer
   postgres   17973  0.0  0.2 206664  5212 ?        Ss   16:47   0:00  \_ postgres: patroni-lab: background writer
   postgres   17974  0.0  0.4 206664  9300 ?        Ss   16:47   0:00  \_ postgres: patroni-lab: walwriter
