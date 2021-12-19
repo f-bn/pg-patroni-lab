@@ -10,7 +10,7 @@
 
 * Then, apply some sysctls to ensure HAProxy :
 
-  ````
+  ```
   $ vi /etc/sysctl.d/99-proxy.conf
 
   net.ipv4.ip_nonlocal_bind = 1
