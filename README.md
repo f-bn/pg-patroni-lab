@@ -22,7 +22,7 @@ This repository contains configurations for deploying a PostgreSQL HA cluster us
 The cluster is composed of two main "sub" clusters :
 
 * **Front Load Balancers**
-  - 2x **HAProxy LB** in dual Active/Passive mode + Keepalived (1 failover IP for R/W traffic, 1 failover IP for R/O traffic)
+  - 2x **HAProxy LB** in Active/Passive mode + Keepalived VIP
 
 * **PostgreSQL cluster**
   - 1x **Primary** PostgreSQL instance
@@ -30,6 +30,18 @@ The cluster is composed of two main "sub" clusters :
 
 * **DCS cluster**
   - 3x **etcd** nodes in HA cluster
+
+## Deployment and administration
+
+* **HAProxy Load Balancer**
+  - [HAProxy](resources/front-lb/README.md#haproxy-installation)
+  - [Keepalived VIP](resources/front-lb/README.md#keepalived)
+
+* **DCS cluster bootstrap**
+  - [etcd](resources/dcs/etcd/README.md)
+
+* **Patroni**
+  - [Patroni installation](resources/patroni/README.md#installation)
 
 ## References
 

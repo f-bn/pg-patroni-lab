@@ -1,0 +1,46 @@
+---
+scope: patroni-lab
+name: patroni03
+restapi:
+  listen: 10.0.1.26:8008
+  connect_address: 10.0.1.26:8008
+log:
+  level: INFO
+etcd3:
+  hosts:
+  - '10.0.1.27:2379'
+  - '10.0.1.28:2379'
+  - '10.0.1.29:2379'
+  protocol: http
+bootstrap:
+  dcs:
+    ttl: 30
+    loop_wait: 10
+    retry_timeout: 10
+    maximum_lag_on_failover: 1048576
+    postgresql:
+      use_slots: true
+      use_pg_rewind: true
+  initdb:
+  - encoding: UTF8
+  - data-checksums
+  pg_hba:
+  - host replication repuser 10.0.1.0/24 scram-sha-256
+  - host all all 10.0.1.0/24 scram-sha-256
+postgresql:
+  listen: "*:5432"
+  connect_address: 10.0.1.26:5432
+  data_dir: /var/lib/pgsql/14/data
+  bin_dir: /usr/pgsql-14/bin
+  authentication:
+    superuser:
+      username: postgres
+      password: sacp
+    replication:
+      username: repuser
+      password: repuser
+    rewind:
+      username: rewinduser
+      password: rewinduser
+watchdog:
+  mode: off
