@@ -8,7 +8,7 @@ This repository contains configurations for deploying a PostgreSQL HA cluster us
 
 ### Overview
 
-![Patroni cluster](docs/patroni-11012022-1.png)
+![Patroni cluster](docs/patroni-11022022-1.png)
 
 ### Components
 
