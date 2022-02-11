@@ -4,32 +4,34 @@
 
 ## General informations
 
-This repository contains configurations for deploying a PostgreSQL HA cluster using Zalando Patroni (for training purpose).
+This repository contains configurations for deploying a PostgreSQL HA cluster using Zalando Patroni for training purpose).
 
 ### Overview
 
-![Patroni cluster](docs/patroni-11022022-1.png)
+![Patroni cluster](docs/patroni-11022022-2.png)
 
 ### Components
 
   - **PostgreSQL version** : `14.1`
   - **Patroni version** : `2.1.2`
   - **DCS (Distributed Configuration Store)** : etcd `3.5.0`
-  - **OS** : Fedora 35
+  - **Base OS** : Fedora 35
 
 ### Nodes description
 
-The cluster is composed of two main "sub" clusters :
+The cluster is composed of three main "sub-clusters" :
 
-* **Front Load Balancers**
-  - 2x **HAProxy LB** in Active/Passive mode + Keepalived VIP
+* **Front Load-Balancer cluster**
+
+  - 2x **HAProxy LB** in Active/Passive mode with failover IP address managed by Keepalived
 
 * **PostgreSQL cluster**
-  - 1x **Primary** PostgreSQL instance
-  - 2x **Standby** PostgreSQL instances in streaming replication (managed by Patroni)
+
+  - 3x **PostgreSQL** instances in streaming replication managed by Patroni (primary election, switch-over...etc)
 
 * **DCS cluster**
-  - 3x **etcd** nodes in HA cluster
+
+  - 3x **etcd** nodes in HA cluster (to provide lock mechanism and centralized configurations for Patroni)
 
 ## Deployment and administration
 
@@ -47,7 +49,5 @@ The cluster is composed of two main "sub" clusters :
 
 - **PostgreSQL** : https://www.postgresql.org/
 - **Patroni (Zalando)** : https://github.com/zalando/patroni
-- **pgBouncer** : https://www.pgbouncer.org/
 - **etcd** : https://etcd.io/
-- **Apache Zookeeper** : https://zookeeper.apache.org/
 - **HAProxy** : https://www.haproxy.com/
