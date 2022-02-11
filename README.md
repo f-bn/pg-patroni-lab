@@ -36,14 +36,15 @@ The cluster is composed of three main "sub-clusters" :
 ## Deployment and administration
 
 * **HAProxy Load Balancer**
-  - [HAProxy](resources/front-lb/README.md#haproxy-installation)
-  - [Keepalived VIP](resources/front-lb/README.md#keepalived)
+
+  - [HAProxy and Keepalived setup](resources/front-lb/)
 
 * **DCS cluster bootstrap**
-  - [etcd](resources/dcs/etcd/README.md)
+
+  - [etcd](resources/dcs/etcd/)
 
 * **Patroni**
-  - [Patroni installation](resources/patroni/README.md#installation)
+  - [Patroni deployment](resources/patroni/)
 
 ## References
 

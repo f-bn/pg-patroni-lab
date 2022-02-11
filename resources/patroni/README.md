@@ -1,6 +1,6 @@
 ### Patroni
 
-#### Installation
+#### Deployment
 
 * Add official PostgreSQL RPM repositories for Fedora (Patroni RPMs are included in these repositories) :
 
@@ -60,4 +60,5 @@
   | patroni01 | 10.0.1.24 | Leader  | running |  1 |           |
   | patroni02 | 10.0.1.25 | Replica | running |  1 |         0 |
   | patroni03 | 10.0.1.26 | Replica | running |  1 |         0 |
+  +-----------+-----------+---------+---------+----+-----------+
   ```
